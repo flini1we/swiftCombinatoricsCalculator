@@ -180,8 +180,8 @@ class CalculatorScreenModel {
 
 fileprivate struct ResultFromFormula {
     static func placementWithoutRepetition(n: Int, k: Int) async -> String {
-        if n > 20 || k > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 || k > 170 {
+            return "Ошибка, Введенное вами значение превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         if k < 0 || n < 0 {
             return "Ошибка, вы ввели отрицательное число"
@@ -196,8 +196,8 @@ fileprivate struct ResultFromFormula {
     }
     
     static func placementWithRepetition(n: Int, k: Int) async -> String {
-        if n > 20 || k > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 || k > 170 {
+            return "Ошибка, Введенное вами значение превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         if k < 0 || n < 0 {
             return "Ошибка, вы ввели отрицательное число"
@@ -207,8 +207,8 @@ fileprivate struct ResultFromFormula {
         }
     }
     static func permutationsWithoutRepetition(n: Int) async -> String {
-        if n > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 {
+            return "Ошибка, Введенное вами значение превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         return "\(await factorial(n))"
     }
@@ -218,13 +218,13 @@ fileprivate struct ResultFromFormula {
             return "1.0"
         }
         for elem in sequence {
-            if elem > 20 {
-                return "Ошибка, Одно из введенных вами значений превышает 20, к сожалению программа не обрабатывает такие большие числа"
+            if elem > 170 {
+                return "Ошибка, Одно из введенных вами значений превышает 170, к сожалению программа не обрабатывает такие большие числа"
             }
         }
         let sum = sequence.reduce(0, +)
-        if sum > 20 {
-            return "Ошибка, сумма введенных вами значений превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if sum > 170 {
+            return "Ошибка, сумма введенных вами значений превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         var devider: Double = 1
         for elem in sequence {
@@ -234,8 +234,8 @@ fileprivate struct ResultFromFormula {
     }
     
     static func combinationsWithoutRepetition(n: Int, k: Int) async -> String {
-        if n > 20 || k > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 || k > 170 {
+            return "Ошибка, Введенное вами значение превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         if k < 0 || n < 0 { return "Ошибка, вы ввели отрицательное число" }
         if k > n {
@@ -249,8 +249,8 @@ fileprivate struct ResultFromFormula {
     }
     
     static func combinationWithRepetition(n: Int, k: Int) async -> String {
-        if n > 20 || k > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 || k > 170 || n + k > 171 {
+            return "Ошибка, Введенное вами значение (или сумма значений) превышают 170, к сожалению программа не обрабатывает такие большие числа"
         }
         if k < 0 || n < 0 {
             return "Ошибка, вы ввели отрицательное число"
@@ -265,8 +265,8 @@ fileprivate struct ResultFromFormula {
     }
     
     static func allSelectedAreMarked(n: Int, k: Int, m: Int) async -> String {
-        if n > 20 || k > 20 || m > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 || k > 170 || m > 170 {
+            return "Ошибка, Введенное вами значение превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         if m > n {
             return "Ошибка, m не может быть больше чем n"
@@ -287,15 +287,11 @@ fileprivate struct ResultFromFormula {
     }
     
     static func rselectedAreMarked(n: Int, k: Int, m: Int, r: Int) async -> String {
-        print("n = \(n)")
-        print("k = \(k)")
-        print("m = \(m)")
-        print("r = \(r)")
         if n < 0 || k < 0 || m < 0 || r < 0 {
             return "Ошибка, все значения должны быть неотрицательными"
         }
-        if n > 20 || k > 20 || m > 20 || r > 20 {
-            return "Ошибка, Введенное вами значение превышает 20, к сожалению программа не обрабатывает такие большие числа"
+        if n > 170 || k > 170 || m > 170 || r > 170 {
+            return "Ошибка, Введенное вами значение превышает 170, к сожалению программа не обрабатывает такие большие числа"
         }
         if m > n {
             return "Ошибка, количество меченых объектов не может превышать общее количество объектов"
@@ -333,7 +329,7 @@ fileprivate struct ResultFromFormula {
         if n == 0 { return 1 }
         
         var result: Double = 1
-        for i in 1...min(n, 20) {
+        for i in 1...min(n, 170) {
             result *= Double(i)
         }
         return result
